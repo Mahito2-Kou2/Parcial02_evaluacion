@@ -1,2 +1,2 @@
-# Parcial02_evaluacion
+# parcial1-voltacali
 Parcial.
