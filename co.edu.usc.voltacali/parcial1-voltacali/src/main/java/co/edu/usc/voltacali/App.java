@@ -160,7 +160,6 @@ class CargadorVE {
     public Vector<RegistroSesion> getRegistro() {
         return registro;
     }
-}
 
  private boolean cambiar(double nueva, String evento) {
         boolean valido = nueva >= 0 && nueva <= potenciaMaxima;
@@ -195,6 +194,14 @@ class CargadorVE {
         return aplicados;
     }
 
+    public boolean reducirPotencia(double decremento) {
+        return cambiar(potenciaActual - decremento, "reducirPotencia(" + decremento + ")");
+    }
+
+    public void cortarCarga() {
+    cambiar(0, "cortarCarga()");
+    }
+
 public final class App {
     private App() {
     }
@@ -206,4 +213,5 @@ public final class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
+}
 }
