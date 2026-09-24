@@ -246,6 +246,18 @@ class CargadorVE {
         }
     }
 
+    public static CargadorVE[] filtrar(CargadorVE[] cargadores, TipoConector tipo) {
+        Vector<CargadorVE> resultado = new Vector<>();
+        if (cargadores != null) {
+            for (CargadorVE c : cargadores) {
+                if (c != null && c.tipoConector == tipo) {
+                    resultado.add(c);
+                }
+            }
+        }
+        return resultado.toArray(new CargadorVE[0]);
+    }
+
 public final class App {
     private App() {
     }
