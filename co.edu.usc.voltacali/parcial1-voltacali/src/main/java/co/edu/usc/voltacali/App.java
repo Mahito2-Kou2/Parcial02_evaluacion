@@ -2,6 +2,11 @@ package co.edu.usc.voltacali;
 
 /* INTENTO 2: Hello world!_SE BORRO EL ANTERIRO*/
 
+public class CargadorVE {
+public enum TipoConector {
+    Tipo_1, Tipo_2, CCS2, CHADEMO, GBT
+}
+}
 public final class App {
     private App() {
     }
