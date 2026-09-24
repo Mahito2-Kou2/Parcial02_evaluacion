@@ -64,7 +64,14 @@ public class RegistroSesion {
     this.fabricante = fabricante;
     this.anioInstalacion = anioInstalacion;
     this.voltajeNominal = voltajeNominal;
-    this.
+    this.tipoConector = tipoConector;
+    this.puestosParqueo = puestosParqueo;
+    this.potenciaMaxima = potenciaMaxima;
+    this.ubicacion = ubicacion;
+    this.potenciaActual = 0;
+
+    /**Contador**/
+    
     }
 
 }
