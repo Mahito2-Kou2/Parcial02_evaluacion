@@ -186,7 +186,13 @@ class CargadorVE {
     public boolean aumentarPotencia() {
         return aumentarPotencia(INCREMENTO_DEFECTO);
     }
-    
+
+    public int aumentarPotencia(double incremento, int veces) {
+        int aplicados = 0;
+        }
+        return aplicados;
+    }
+
 public final class App {
     private App() {
     }
