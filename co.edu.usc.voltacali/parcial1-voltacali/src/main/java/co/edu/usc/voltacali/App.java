@@ -222,6 +222,12 @@ class CargadorVE {
         return horas + pausas * minutosPorPausa / 60;
     }
 
+    public void mostrar() {
+        mostrar(false);
+    }
+
+    
+
 public final class App {
     private App() {
     }
