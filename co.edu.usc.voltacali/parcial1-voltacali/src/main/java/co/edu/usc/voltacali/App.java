@@ -18,7 +18,6 @@ private static int contadorRegistros = 0;
 public static final double LIMITE_RED = 50.0;
 public static final double INCREMENTO_DEFECTO = 5.0;
 
-
 /* Punto D*/
 public enum TipoConector {
     TTIPO_1, TIPO_2, CCS2, CHADEMO, GBT
@@ -32,6 +31,21 @@ public enum Ubicacion {
     CENTRO_COMERCIAL, UNIVERSIDAD, ESTACION_SERVICIO, PARQUEADERO_PUBLICO, RESIDENCIAL, HOTEL, TERMINAL, FLOTA_CORPORATIVA
 }
 
+public class RegistroSesion {
+    private final int numero;
+    private final String evento;
+    private final boolean valido;
+    private final string fabricante;
+    private final int anioInstalacion;
+    private final double potenciaActual;
+
+    public RegistroSesion(String evento, boolean valido){
+        this.evento = evento;
+        this.valido = valido;
+        this.fabricante = CargadorVE.this.fabricante;
+        this.anioInstalacion =
+    }
+}
 
 
 }
