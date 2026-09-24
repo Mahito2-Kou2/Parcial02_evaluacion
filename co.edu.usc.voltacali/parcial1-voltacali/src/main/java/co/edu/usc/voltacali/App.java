@@ -189,6 +189,8 @@ class CargadorVE {
 
     public int aumentarPotencia(double incremento, int veces) {
         int aplicados = 0;
+            while (aplicados < veces && aumentarPotencia(incremento)) {
+            aplicados++;
         }
         return aplicados;
     }
