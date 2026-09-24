@@ -1,5 +1,7 @@
 package co.edu.usc.voltacali;
 
+import java.util.Vector;
+
 /* INTENTO 2: Hello world!_SE BORRO EL ANTERIRO*/
 
 /**Clase**/
@@ -30,6 +32,8 @@ public enum TipoCargador{
 public enum Ubicacion {
     CENTRO_COMERCIAL, UNIVERSIDAD, ESTACION_SERVICIO, PARQUEADERO_PUBLICO, RESIDENCIAL, HOTEL, TERMINAL, FLOTA_CORPORATIVA
 }
+
+private final Vector<RegistroSesion> registro = new Vector<RegistroSesion>();
 
 public class RegistroSesion {
     private final int numero;
