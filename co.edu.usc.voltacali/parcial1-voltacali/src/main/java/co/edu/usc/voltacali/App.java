@@ -64,9 +64,7 @@ class CargadorVE {
         }
     }
 
-    public CargadorVE(String fabricante, int anioInstalacion, int voltajeNominal,
-            TipoConector tipoConector, TipoCargador tipoCargador, int numeroConectores,
-            int puestosParqueo, double potenciaMaxima, Ubicacion ubicacion) {
+    public CargadorVE(String fabricante, int anioInstalacion, int voltajeNominal, TipoConector tipoConector, TipoCargador tipoCargador, int numeroConectores, int puestosParqueo, double potenciaMaxima, Ubicacion ubicacion) {
         this.fabricante = fabricante;
         this.anioInstalacion = anioInstalacion;
         this.voltajeNominal = voltajeNominal;
@@ -81,8 +79,78 @@ class CargadorVE {
     }
 
     public CargadorVE(String fabricante, int anioInstalacion, double potenciaMaxima) {
-        this(fabricante, anioInstalacion, 220, TipoConector.TIPO_2,
-                TipoCargador.PEDESTAL, 1, 1, potenciaMaxima, Ubicacion.PARQUEADERO_PUBLICO);
+        this(fabricante, anioInstalacion, 220, TipoConector.TIPO_2, TipoCargador.PEDESTAL, 1, 1, potenciaMaxima, Ubicacion.PARQUEADERO_PUBLICO);
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public int getAnioInstalacion() {
+        return anioInstalacion;
+    }
+
+    public int getVoltajeNominal() {
+        return voltajeNominal;
+    }
+
+    public TipoCargador getTipoCargador() {
+        return tipoCargador;
+    }
+
+    public TipoConector getTipoConector() {
+        return tipoConector;
+    }
+
+    public int getNumeroConectores() {
+        return numeroConectores;
+    }
+
+    public int getPuestosParqueo() {
+        return puestosParqueo;
+    }
+
+    public double getPotenciaMaxima() {
+        return potenciaMaxima;
+    }
+
+    public Ubicacion getUbicacion() {
+        return ubicacion;
+    }
+
+    public double getPotenciaActual() {
+        return potenciaActual;
+    }
+
+    public static int getTotalCargadores() {
+        return totalCargadores;
+    }
+
+    public String describir() {
+        return "CargadorVE{"
+                + "fabricante='" + fabricante + '\''
+                + ", anioInstalacion=" + anioInstalacion
+                + ", voltajeNominal=" + voltajeNominal
+                + ", tipoCargador=" + tipoCargador
+                + ", tipoConector=" + tipoConector
+                + ", numeroConectores=" + numeroConectores
+                + ", puestosParqueo=" + puestosParqueo
+                + ", potenciaMaxima=" + potenciaMaxima
+                + ", ubicacion=" + ubicacion
+                + ", potenciaActual=" + potenciaActual
+                + '}';
+    }
+
+    public void ajustarPotencia(double incremento) {
+        if (incremento < 0) {
+            throw new IllegalArgumentException("El incremento no puede ser negativo.");
+        }
+        potenciaActual = Math.min(potenciaActual + incremento, potenciaMaxima);
+        registrarEvento("Ajuste de potencia: +" + incremento + " kw", true);
+    }
+
+    public boolean puedeOperar() {
+        return potenciaActual <= potenciaMaxima && potenciaMaxima > 0;
     }
 
     public void registrarEvento(String evento, boolean valido) {
