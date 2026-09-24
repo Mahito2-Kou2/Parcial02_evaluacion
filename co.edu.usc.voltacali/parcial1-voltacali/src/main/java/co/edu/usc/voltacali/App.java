@@ -23,7 +23,7 @@ public enum TipoConector {
     TTIPO_1, TIPO_2, CCS2, CHADEMO, GBT
 }
 
-public enum TipoCOnector {
+public enum TipoCargador{
     MURAL, PEDESTAL, RAPIDO_DC, ULTRARRAPIDO, PORTATIL, BIDIRECCIONAL_V2G
 }
 
@@ -43,10 +43,31 @@ public class RegistroSesion {
         this.evento = evento;
         this.valido = valido;
         this.fabricante = CargadorVE.this.fabricante;
-        this.anioInstalacion =
+        this.anioInstalacion = CargadorVE.this.anioInstalacion;
+        this.potenciaActual = CargadorVE.this.potenciaActual;
+        
+        /** Contador **/
+        contadorRegistros++;
+        this.numero = contadorRegistros;
+    
     }
-}
 
+    public String describir(){
+        return "-" + numero + "-" + fabricante + "(" + anioInstalacion + ")"
+    + " | " + potenciaActual + "kw"
+    + " | " + (valido ? "VALIDO" : "INVADO")
+    + " | " + evento;
+
+    } 
+
+    public CargadorVE(String fabricante, int anioInstalacion, int voltajeNominal, TipoConector tipoConector, TipoCargador tipocargador, int numeroConectores, int puestosParqueo, double potenciaMaxima, Ubicacion ubicacion){
+    this.fabricante = fabricante;
+    this.anioInstalacion = anioInstalacion;
+    this.voltajeNominal = voltajeNominal;
+    this.
+    }
+
+}
 
 }
 
