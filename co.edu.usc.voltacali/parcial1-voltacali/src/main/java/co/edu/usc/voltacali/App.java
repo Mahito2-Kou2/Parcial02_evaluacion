@@ -226,7 +226,25 @@ class CargadorVE {
         mostrar(false);
     }
 
-    
+    public void mostrar(boolean detallado) {
+        System.out.println("   Fabricante: " + fabricante);
+        System.out.println("   Anio de instalacion: " + anioInstalacion);
+        System.out.println("   Voltaje nominal: " + voltajeNominal + " V");
+        System.out.println("   Tipo de conector: " + tipoConector);
+        System.out.println("   Tipo de cargador: " + tipoCargador);
+        System.out.println("   Numero de conectores: " + numeroConectores);
+        System.out.println("   Puestos de parqueo: " + puestosParqueo);
+        System.out.println("   Potencia maxima: " + potenciaMaxima + " kW");
+        System.out.println("   Potencia actual: " + potenciaActual + " kW");
+        System.out.println("   Ubicacion: " + ubicacion);
+        
+        if (detallado) {
+            System.out.println("   Registro (" + registro.size() + " eventos):");
+            for (RegistroSesion r : registro) {
+                System.out.println("     " + r.describir());
+            }
+        }
+    }
 
 public final class App {
     private App() {
