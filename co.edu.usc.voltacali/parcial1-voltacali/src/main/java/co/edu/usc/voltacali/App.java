@@ -162,6 +162,18 @@ class CargadorVE {
     }
 }
 
+ private boolean cambiar(double nueva, String evento) {
+        boolean valido = nueva >= 0 && nueva <= potenciaMaxima;
+        if (valido) {
+            potenciaActual = nueva;
+        } else {
+            System.out.println("   Rechazado: " + evento + " daria " + nueva + " kW");
+            evento = evento + " rechazado";
+        }
+        registro.add(new RegistroSesion(evento, valido));
+        return valido;
+    }
+
 public final class App {
     private App() {
     }
