@@ -202,6 +202,12 @@ class CargadorVE {
     cambiar(0, "cortarCarga()");
     }
 
+    public double tiempoEstimadoCarga(double energiaKwh) {
+        return tiempoEstimadoCarga(energiaKwh, potenciaActual);
+    }
+ 
+    public double tiempoEstimadoCarga(double energiaKwh, double potenciaProgramada) {
+
 public final class App {
     private App() {
     }
