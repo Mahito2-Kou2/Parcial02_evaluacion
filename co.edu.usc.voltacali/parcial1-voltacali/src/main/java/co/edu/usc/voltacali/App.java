@@ -174,6 +174,19 @@ class CargadorVE {
         return valido;
     }
 
+
+    public boolean setPotenciaActual(double p) {
+        return cambiar(p, "setPotenciaActual(" + p + ")");
+    }
+ 
+    public boolean aumentarPotencia(double incremento) {
+        return cambiar(potenciaActual + incremento, "aumentarPotencia(" + incremento + ")");
+    }
+ 
+    public boolean aumentarPotencia() {
+        return aumentarPotencia(INCREMENTO_DEFECTO);
+    }
+    
 public final class App {
     private App() {
     }
