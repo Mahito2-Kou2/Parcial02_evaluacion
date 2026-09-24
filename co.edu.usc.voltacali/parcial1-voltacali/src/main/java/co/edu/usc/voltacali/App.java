@@ -207,6 +207,12 @@ class CargadorVE {
     }
  
     public double tiempoEstimadoCarga(double energiaKwh, double potenciaProgramada) {
+        if (potenciaProgramada <= 0) {
+            System.out.println("   No se puede estimar: la potencia es 0 kW");
+            return -1;
+        }
+        return energiaKwh / potenciaProgramada;
+    }
 
 public final class App {
     private App() {
