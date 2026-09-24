@@ -214,6 +214,14 @@ class CargadorVE {
         return energiaKwh / potenciaProgramada;
     }
 
+    public double tiempoEstimadoCarga(double energiaKwh, int pausas, double minutosPorPausa) {
+        double horas = tiempoEstimadoCarga(energiaKwh);
+        if (horas < 0) {
+            return -1;
+        }
+        return horas + pausas * minutosPorPausa / 60;
+    }
+
 public final class App {
     private App() {
     }
